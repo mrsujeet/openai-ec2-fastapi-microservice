@@ -37,7 +37,7 @@ async def get_response(request: Request):
             return JSONResponse(content={"error": "Query not provided"}, status_code=400)
 
         response = client.chat.completions.create(
-            model="gpt-4o-preview",
+            model="gpt-4o",
             messages=[{"role": "user", "content": user_query}]
         )
         return {"response": response.choices[0].message.content}
